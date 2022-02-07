@@ -22,7 +22,9 @@ public interface CRUDSoftDrinksInterface<S> {
 
 	S update(int Id, S s);
 
-	// Delete
+	// Delete //simply put if the boolean is true it means that the (id) or
+	// variable still exists so therefore it hasn't been deleted. The opposite is
+	// that if it's false it means the variable has been deleted
 	boolean delete(int Id);
 
 }

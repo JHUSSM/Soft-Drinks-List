@@ -19,16 +19,17 @@ public class SoftDrinks {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private int id;
+	private Long id;
 
-	@NotNull(message = "All drinks require a Name.") // message is prompting the user to fill in the empty space as it
-	@Column // empty space as it should not be left empty
+	// message is prompting the user to fill in the empty space as it
+	// should not be left empty
+	@NotNull(message = "All drinks require a Name.")
+	@Column
 	private String name;
 
 	@Column
 	private String ownedBy; // company
 
-	@Min(0)
 	@NotNull(message = "Price of drink is required.")
 	@Column
 	private double ukPrice;
@@ -45,7 +46,7 @@ public class SoftDrinks {
 	@Column
 	private int calories;
 
-	public SoftDrinks(int id, String name, String ownedBy, double ukPrice, int millilitresOfDrink, int calories) {
+	public SoftDrinks(Long id, String name, String ownedBy, double ukPrice, int millilitresOfDrink, int calories) {
 		this.id = id;
 		this.name = name;
 		this.ownedBy = ownedBy;
@@ -66,11 +67,11 @@ public class SoftDrinks {
 		super();
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -131,6 +132,12 @@ public class SoftDrinks {
 		return calories == other.calories && id == other.id && millilitresOfDrink == other.millilitresOfDrink
 				&& Objects.equals(name, other.name) && Objects.equals(ownedBy, other.ownedBy)
 				&& Double.doubleToLongBits(ukPrice) == Double.doubleToLongBits(other.ukPrice);
+	}
+
+	@Override
+	public String toString() {
+		return "SoftDrinks [id=" + id + ", name=" + name + ", ownedBy=" + ownedBy + ", ukPrice=" + ukPrice
+				+ ", millilitresOfDrink=" + millilitresOfDrink + ", calories=" + calories + "]";
 	}
 
 }

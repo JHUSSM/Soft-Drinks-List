@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.soft.drinks.domain.SoftDrinks;
-import com.qa.soft.drinks.service.CRUDSoftDrinksInterface;
+import com.qa.soft.drinks.service.SoftDrinksService;
 
 @RestController
 public class SoftDrinksController {
 
-	private CRUDSoftDrinksInterface<SoftDrinks> service;
+	private SoftDrinksService service;
 
-	public SoftDrinksController(CRUDSoftDrinksInterface<SoftDrinks> service) {
+	public SoftDrinksController(SoftDrinksService service) {
 		this.service = service;
 	}
 

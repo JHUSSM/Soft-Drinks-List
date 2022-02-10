@@ -8,9 +8,11 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.qa</groupId>
-	<artifactId>Elephants</artifactId>
+
+	<artifactId>SoftDrinks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Elephants</name>
+	<name>SoftDrinks</name>
+
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -51,7 +53,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
 </dependencies>
+
 
 	<build>
 		<plugins>

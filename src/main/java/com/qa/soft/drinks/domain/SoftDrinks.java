@@ -13,7 +13,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Soft Drinks")
+@Table(name = "softDrinks")
 public class SoftDrinks {
 
 	@Id
@@ -64,7 +64,6 @@ public class SoftDrinks {
 	}
 
 	public SoftDrinks() {
-		super();
 	}
 
 	public Long getId() {

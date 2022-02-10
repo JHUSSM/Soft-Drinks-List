@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.soft.drinks.domain.SoftDrinks;
 import com.qa.soft.drinks.service.SoftDrinksService;
 
 @RestController
+@RequestMapping("/softdrink")
 public class SoftDrinksController {
 
 	private SoftDrinksService service;
@@ -34,19 +36,19 @@ public class SoftDrinksController {
 		return new ResponseEntity<List<SoftDrinks>>(this.service.readAll(), HttpStatus.OK);
 	}
 
-	@GetMapping("/readById/{id}")
-	public ResponseEntity<SoftDrinks> readSoftDrinksById(@PathVariable int id) {
-		return new ResponseEntity<SoftDrinks>(this.service.readById(id), HttpStatus.FOUND);
+	@GetMapping("/getById/{id}")
+	public ResponseEntity<SoftDrinks> getSoftDrinksById(@PathVariable Long id) {
+		return new ResponseEntity<SoftDrinks>(this.service.getById(id), HttpStatus.FOUND);
 
 	}
 
 	@PutMapping("/update/{id}")
-	public ResponseEntity<SoftDrinks> updateSoftDrinksById(@PathVariable int id, @RequestBody SoftDrinks drink) {
+	public ResponseEntity<SoftDrinks> updateSoftDrinksById(@PathVariable Long id, @RequestBody SoftDrinks drink) {
 		return new ResponseEntity<SoftDrinks>(this.service.update(id, drink), HttpStatus.ACCEPTED);
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteSoftDrinksById(@PathVariable int id) {
+	public ResponseEntity<?> deleteSoftDrinksById(@PathVariable Long id) {
 		return new ResponseEntity<Boolean>(this.service.delete(id), HttpStatus.GONE);
 	}
 

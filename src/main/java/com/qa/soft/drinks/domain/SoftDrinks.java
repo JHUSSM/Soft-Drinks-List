@@ -116,7 +116,7 @@ public class SoftDrinks {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(calories, id, millilitresOfDrink, name, ownedBy, ukPrice);
+		return Objects.hash(calories, millilitresOfDrink, name, ownedBy, ukPrice);
 	}
 
 	@Override
@@ -128,7 +128,7 @@ public class SoftDrinks {
 		if (getClass() != obj.getClass())
 			return false;
 		SoftDrinks other = (SoftDrinks) obj;
-		return calories == other.calories && id == other.id && millilitresOfDrink == other.millilitresOfDrink
+		return calories == other.calories && millilitresOfDrink == other.millilitresOfDrink
 				&& Objects.equals(name, other.name) && Objects.equals(ownedBy, other.ownedBy)
 				&& Double.doubleToLongBits(ukPrice) == Double.doubleToLongBits(other.ukPrice);
 	}

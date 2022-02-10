@@ -1,8 +1,12 @@
 package com.qa.soft.drinks.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.soft.drinks.domain.SoftDrinks;
 
@@ -62,4 +67,31 @@ public class SoftDrinksControllerTest {
 		this.mock.perform(mockRequest).andExpect(matchStatus).andExpect(matchBody);
 
 	}
+
+	@Test
+	void testingreadall() throws JsonProcessingException, Exception {
+		SoftDrinks savedSD = new SoftDrinks(1L, "coca cola", "The Coca Cola Company", 1.87, 330, 139);
+		this.mock.perform(get("/softdrink/readAll")).andExpect(status().isOk())
+				.andExpect(content().json(this.map.writeValueAsString(List.of(savedSD))));
+
+	}
+
+	@Test
+	void testinggetbyid() throws Exception {
+		SoftDrinks savedSD = new SoftDrinks(1L, "coca cola", "The Coca Cola Company", 1.87, 330, 139);
+		this.mock.perform(get("/softdrink/getById/1")).andExpect(status().isFound())
+				.andExpect(content().json(this.map.writeValueAsString(savedSD)));
+
+	}
+
+	@Test
+	void testingupdate() throws Exception {
+		SoftDrinks savedSD = new SoftDrinks("coca cola cherry", "The Coca Cola Company", 1.87, 330, 139);
+		SoftDrinks updatedSD = new SoftDrinks(1L, "coca cola cherry", "The Coca Cola Company", 1.87, 330, 139);
+		this.mock
+				.perform(put("/softdrink/update/1").contentType(MediaType.APPLICATION_JSON)
+						.content(this.map.writeValueAsString(savedSD)))
+				.andExpect(status().isAccepted()).andExpect(content().json(this.map.writeValueAsString(updatedSD)));
+	}
+
 }

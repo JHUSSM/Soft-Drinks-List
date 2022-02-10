@@ -5,6 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+
 public class SoftDrinksUnitTest {
 
 	@Test
@@ -50,6 +52,18 @@ public class SoftDrinksUnitTest {
 	public void testingGetters() {
 		SoftDrinks drink = new SoftDrinks(1L, "coco cola", "The Coco Cola Company", 1.87, 330, 139);
 
+	}
+
+	@Test
+	public void testinghash() {
+		EqualsVerifier.simple().forClass(SoftDrinks.class).verify();
+	}
+
+	@Test
+	public void testingtoString() {
+		SoftDrinks drink = new SoftDrinks();
+		assertEquals(drink.toString(),
+				"SoftDrinks [id=null, name=null, ownedBy=null, ukPrice=0.0, millilitresOfDrink=0, calories=0]");
 	}
 
 }

@@ -28,12 +28,12 @@ public class SoftDrinksService implements CRUDSoftDrinksInterface<SoftDrinks> {
 	}
 
 	@Override
-	public SoftDrinks readById(int id) {
-		return this.repo.getById(id);
+	public SoftDrinks getById(Long id) {
+		return this.repo.findSoftDrinksById(id);
 	}
 
 	@Override
-	public SoftDrinks update(int id, SoftDrinks s) {
+	public SoftDrinks update(Long id, SoftDrinks s) {
 		Optional<SoftDrinks> existingDrink = this.repo.findById(id);
 		SoftDrinks existing = existingDrink.get();
 		existing.setName(s.getName());
@@ -41,16 +41,13 @@ public class SoftDrinksService implements CRUDSoftDrinksInterface<SoftDrinks> {
 		existing.setUkPrice(s.getUkPrice());
 		existing.setMillilitresOfDrink(s.getMillilitresOfDrink());
 		existing.setCalories(s.getCalories());
-		return existing;
+		return this.repo.save(existing);
+
 	}
 
 	@Override
-	public boolean delete(int id) {
-		if (!this.repo.existsById(id)) {
-			System.out.println("id not found in database");
-		} else {
-			this.repo.deleteById(id);
-		}
+	public boolean delete(Long id) {
+		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
 	}
 

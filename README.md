@@ -21,6 +21,11 @@ Having a small issue in your pom file can affect your whole project is what I ca
 # Stretch goals for the project:
 I would in future as a stretch project, add more tables and entity relationship diagrams to increase the functional capability of the program. Maybe adding a food section / starters section to get a menu style of a project going. Maybe even add customers, orders tables etc. I made the decision to keep it simple to reduce the scope for errors to occur io like that we can alway build upon it if we have to, I was making sure the foundations work before adding more levels to the code. 
 
+# MY ERD 
+- Before starting my project it was important that i made my erd so i can use it as a guidance and refer back to it 
+![image](https://user-images.githubusercontent.com/95347753/153614266-bd59db98-c2fa-4226-9ba8-1fb4d75413d1.png)
+
+
 
 # Evidence of the CRUD methods working in POSTMAN:
 

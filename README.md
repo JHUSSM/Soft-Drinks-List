@@ -80,7 +80,8 @@ https://docs.google.com/spreadsheets/d/1ZqHEklIUqChcHoDxgxY5Dh7qobdMMoVEvOK_7Fde
 https://jamalmuse.atlassian.net/jira/software/projects/SDML/boards/4/roadmap?assignee=unassigned&timeline=WEEKS&shared=&atlOrigin=eyJpIjoiZjRjYjIzNzk3Nzg2NDRiNTg2YTdmZDU0MmMzZWM0NTkiLCJwIjoiaiJ9
 
 
-
+# Authors
+Jamal Muse AKA Jamal Hussein Muse AKA Jhuss AKA jam jam AKA jamuse ;)
 
 
 

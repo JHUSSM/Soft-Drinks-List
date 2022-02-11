@@ -53,6 +53,18 @@ I would in future as a stretch project, add more tables and entity relationship 
 ![image](https://user-images.githubusercontent.com/95347753/153589643-181c9462-f702-439f-8266-4e178bc6382a.png)
 
 
+# Evidence of POSTMAN requests being saved to MySQL database drinks
+- sending from POSTMAN with "testing"
+![image](https://user-images.githubusercontent.com/95347753/153602686-69a7557d-75cb-4c10-8ae7-471648c2ccdb.png)
+
+- recieving the "testing" in MySQL database
+![image](https://user-images.githubusercontent.com/95347753/153602819-189b9fdd-9a82-49ab-9b3a-caab4fcd714d.png)
+
+
+
+
+
+
 # To See My RiskAssessment In Google Sheets Click Link Below
 
 https://docs.google.com/spreadsheets/d/1ZqHEklIUqChcHoDxgxY5Dh7qobdMMoVEvOK_7Fde5s8/edit?usp=sharing

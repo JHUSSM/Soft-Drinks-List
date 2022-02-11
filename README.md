@@ -74,6 +74,8 @@ I would in future as a stretch project, add more tables and entity relationship 
 
 https://docs.google.com/spreadsheets/d/1ZqHEklIUqChcHoDxgxY5Dh7qobdMMoVEvOK_7Fde5s8/edit?usp=sharing
 
+# My JIRA project
+https://jamalmuse.atlassian.net/jira/software/projects/SDML/boards/4/roadmap?assignee=unassigned&timeline=WEEKS&shared=&atlOrigin=eyJpIjoiZjRjYjIzNzk3Nzg2NDRiNTg2YTdmZDU0MmMzZWM0NTkiLCJwIjoiaiJ9
 
 
 

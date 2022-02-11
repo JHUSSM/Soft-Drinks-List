@@ -104,7 +104,9 @@ public class SoftDrinksControllerTest {
 		RequestBuilder deleteRequest = delete("/softdrink/delete/" + delId);
 		ResultMatcher Status = status().isGone();
 		ResultMatcher Body = content().string("true");
-		this.mock.perform(deleteRequest).andExpect(Status).andExpect(Body);
+		this.mock.perform(deleteRequest).andExpect(Status).andExpect(Body); // There is no values and its a boolean so
+																			// we return what we expect to see which is
+																			// a boolean response (true)
 	}
 
 }

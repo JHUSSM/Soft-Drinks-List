@@ -1,5 +1,6 @@
 package com.qa.soft.drinks.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -92,6 +93,18 @@ public class SoftDrinksControllerTest {
 				.perform(put("/softdrink/update/1").contentType(MediaType.APPLICATION_JSON)
 						.content(this.map.writeValueAsString(savedSD)))
 				.andExpect(status().isAccepted()).andExpect(content().json(this.map.writeValueAsString(updatedSD)));
+	}
+
+	@Test
+	void testingdelete() throws Exception {
+		SoftDrinks deletedSD = new SoftDrinks(1L, "coca cola", "The Coca Cola Company", 1.87, 330, 139);
+		String deletedSDJSON = this.map.writeValueAsString(deletedSD);
+
+		Long delId = 1L;
+		RequestBuilder deleteRequest = delete("/softdrink/delete/" + delId);
+		ResultMatcher Status = status().isGone();
+		ResultMatcher Body = content().string("true");
+		this.mock.perform(deleteRequest).andExpect(Status).andExpect(Body);
 	}
 
 }

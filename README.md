@@ -66,6 +66,8 @@ I would in future as a stretch project, add more tables and entity relationship 
 ![image](https://user-images.githubusercontent.com/95347753/153602819-189b9fdd-9a82-49ab-9b3a-caab4fcd714d.png)
 
 
+# My Pass rate coverage for my project
+![image](https://user-images.githubusercontent.com/95347753/153622567-b2eff7df-6090-4cb0-9cba-3138e415a8d8.png)
 
 
 
